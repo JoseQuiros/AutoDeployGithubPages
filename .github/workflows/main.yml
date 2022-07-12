@@ -1,0 +1,19 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: All things angular
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2
+      with:  
+        base_href: https://josequiros.github.io/AutoDeployGithubPages/   # make sure this corresponds to https://<your_username>.github.io/<base_href>/
+        github_access_token: ${{ secrets.DEPLOY }}
+        deploy_branch: gh-pages # The branch the action should deploy to.
+        angular_dist_build_folder: dist/cloudkitchenweb # The folder where your project is supposed to be after running ng build by the action.
