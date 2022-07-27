@@ -22,7 +22,10 @@ export class UsersService {
   {
     return this.http.get(this.url+'/user/getUser/'+id);
   }
-
+  getUsersByEmail(email: string):Observable<any>
+  {
+    return this.http.get(this.url+'/user/login/'+ email);
+  }
   saveUser(users: Users):Observable<any>
   {
     return this.http.post(this.url+'/user/saveUser', users);
@@ -40,7 +43,7 @@ export class UsersService {
 
   getRols():Observable<any>
   {
-    return this.http.get<rol>(this.url+'/rol/getAllRoles');
+    return this.http.get<Rol>(this.url+'/rol/getAllRoles');
   }
 }
 
@@ -57,7 +60,7 @@ export interface Users{
   state:string;
 }
 
-export interface rol{
+export interface Rol{
   
   idrol:string;
   name:string;
