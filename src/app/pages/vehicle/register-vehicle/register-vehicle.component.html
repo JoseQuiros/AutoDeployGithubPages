@@ -1,0 +1,61 @@
+<app-navbar></app-navbar>
+<div class="container">
+
+<h1>Datos Vehicle</h1>
+<form #userForm="ngForm" (ngSubmit)="userForm.form.valid && addVehicle()">
+
+    <div class="form-group">
+    <label for="department" class="form-label">Tipo de vehiculo</label>
+    <select name="types"class="form-control" [(ngModel)]="newVehicle.type.idtype">
+      <option>Open this select menu</option>
+      <option [value]="types.idtype"*ngFor="let types of typeList">
+        {{types.name}}
+      </option>
+      
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="name" class="form-label">Marca</label>
+    <input type="text" class="form-control" id="namee" name="namee" [(ngModel)]="newVehicle.brand" required #name="ngModel" 
+     [ngClass]="{ 'is-invalid': userForm.submitted && name.invalid }" required>
+   
+  </div>
+
+  <div class="form-group">
+    <label for="name" class="form-label">Modelo</label>
+    <input type="text" class="form-control" id="dni" name="dni" [(ngModel)]="newVehicle.model" required #name="ngModel"
+    [ngClass]="{ 'is-invalid': userForm.submitted && name.invalid }" required>
+    
+  </div>
+    <div class="form-group">
+    <label for="name" class="form-label">Color</label>
+    <input type="text" class="form-control" id="telephone" name="telephone" [(ngModel)]="newVehicle.color" required #name="ngModel"   
+    [ngClass]="{ 'is-invalid': userForm.submitted && name.invalid }" required>
+   
+  </div>
+  <div cclass="form-group">
+    <label for="name" class="form-label">Año</label>
+    <input type="number" class="form-control" id="telephone" name="telephone" [(ngModel)]="newVehicle.year" required #name="ngModel"  
+    [ngClass]="{ 'is-invalid': userForm.submitted && name.invalid }" required>
+
+  </div>
+  <div class="form-group">
+    <label for="name" class="form-label">Matricula</label>
+    <input type="text" class="form-control" id="email" name="email" [(ngModel)]="newVehicle.register" required #name="ngModel"  
+     [ngClass]="{ 'is-invalid': userForm.submitted && name.invalid }" required>
+  </div>
+  <div class="form-group">
+    <label for="name" class="form-label">Descripcion</label>
+    <input type="text" class="form-control" id="password" name="password" [(ngModel)]="newVehicle.description" required #name="ngModel" 
+      [ngClass]="{ 'is-invalid': userForm.submitted && name.invalid }" required>
+
+  </div>
+  <br>
+  <div class="form-group">
+    <button class="btn btn-danger btn-block">Submit</button>
+  </div>
+
+</form>
+
+</div>
+<br><br><br><br><br>

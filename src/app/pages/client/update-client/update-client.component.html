@@ -1,0 +1,57 @@
+<app-navbar></app-navbar>
+<div class="container">
+
+<h1>Update user</h1>
+<form action="" #contactForm="ngForm">
+    <input type="text" class="form-control" id="iduser" name="iduser" [(ngModel)]="clientUpdate.idclient" hidden #name="ngModel">
+  
+    <div class="mb-4">
+        <label for="department" class="form-label">Vehiculo</label>
+        <select name="roles"class="form-control" [(ngModel)]="clientUpdate.vehicle.idvehicle">
+          <option>Open this select menu</option>
+          <option [value]="vehicles.idvehicle"*ngFor="let vehicles of vehiclesList">
+            {{vehicles.register}}
+          </option>
+          
+        </select>
+      </div>
+  
+  <div class="mb-4">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name="name" [(ngModel)]="clientUpdate.name" required #name="ngModel">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">This field is required.</div>
+  </div>
+  
+  <div class="mb-4">
+    <label for="name" class="form-label">dni</label>
+    <input type="text" class="form-control" id="dni" name="dni" [(ngModel)]="clientUpdate.dni" required #name="ngModel">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">This field is required.</div>
+  </div>
+    <div class="mb-4">
+    <label for="name" class="form-label">Age</label>
+    <input type="text" class="form-control" id="age" name="age" [(ngModel)]="clientUpdate.age" required #name="ngModel">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">This field is required.</div>
+  </div>
+  <div class="mb-4">
+    <label for="name" class="form-label">Telephone</label>
+    <input type="text" class="form-control" id="telephone" name="telephone" [(ngModel)]="clientUpdate.telephone" required #name="ngModel">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">This field is required.</div>
+  </div>
+  <div class="mb-4">
+    <label for="name" class="form-label">Email</label>
+    <input type="text" class="form-control" id="email" name="email" [(ngModel)]="clientUpdate.email" required #name="ngModel">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">This field is required.</div>
+  </div>
+  <div class="mb-4">
+    <label for="name" class="form-label">Password</label>
+    <input type="text" class="form-control" id="password" name="password" [(ngModel)]="clientUpdate.clave" required #name="ngModel">
+    <div [hidden]="name.valid || name.pristine" class="alert alert-danger">This field is required.</div>
+  </div>
+  <div class="d-grid gap-2 col-4 float-end">
+    <button type="submit" class="btn btn-info btn-lg" (click)="updateClient()">Actualizar</button>
+  </div>
+</form>
+
+</div>
+<br><br><br><br><br>
+<app-footer></app-footer>

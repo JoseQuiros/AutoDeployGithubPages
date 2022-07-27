@@ -1,0 +1,45 @@
+       <app-navbar></app-navbar>
+<br>
+<div class="container">
+   
+<h1>Clientes</h1> <br><br>
+    <button class="btn btn-primary" [routerLink]="['/registerClient']" routerLinkActive="router-link-active" >Agregar</button> <br><br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">IDclient</th>
+                <th scope="col">IDvehicle</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">DNI</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Email</th>
+                <th scope="col">Contraseña</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Estado</th>
+                <th>Accion</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let clients of listClient">
+                <td>{{clients.idclient}}</td>
+                <td>{{clients.vehicle.register}}</td>
+                <td>{{clients.name}}</td>
+                <td>{{clients.dni}}</td>
+                <td>{{clients.age}}</td>
+                <td>{{clients.telephone}}</td>
+                <td>{{clients.email}}</td>
+                <td>{{clients.clave}}</td>
+                <td>{{clients.rol.name}}</td>
+                <td>{{clients.state}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="delete(clients.idclient)">Eliminar</button>
+                    <button class="btn btn-warning" [routerLink]="['/updateClient/',clients.idclient]" routerLinkActive="router-link-active" >Modificar</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+

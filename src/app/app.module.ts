@@ -32,6 +32,20 @@ import { UpdateParkingComponent } from './pages/parking/update-parking/update-pa
 import { RegisterSlotsComponent } from './pages/slot/register-slots/register-slots.component';
 import { SeatsComponent } from './pages/client/seats/seats.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { RegisterVehicleComponent } from './pages/vehicle/register-vehicle/register-vehicle.component';
+import { UpdateVehicleComponent } from './pages/vehicle/update-vehicle/update-vehicle.component';
+import { ListClientComponent } from './pages/client/list-client/list-client.component';
+import { RegisterClientComponent } from './pages/client/register-client/register-client.component';
+import { UpdateClientComponent } from './pages/client/update-client/update-client.component';
+
+
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav'
+import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -59,11 +73,20 @@ import { SeatsComponent } from './pages/client/seats/seats.component';
     UpdateParkingComponent,
     RegisterSlotsComponent,
     SeatsComponent,
+
+
+    RegisterVehicleComponent,
+    UpdateVehicleComponent,
+    ListClientComponent,
+    RegisterClientComponent,
+    UpdateClientComponent,
   
+
     
   ],
   imports: [
     BrowserModule,
+    
     RouterModule.forRoot([ {path:'about',component:AboutComponent},
     {path:'tarifa',component:TarifaComponent},
     {path:'vehicle',component:VehicleComponent},
@@ -74,17 +97,27 @@ import { SeatsComponent } from './pages/client/seats/seats.component';
     {path:'reservation',component:ReservationComponent},
     {path:'list',component:ListComponent},
     {path:'register',component:RegisterComponent},
-    {path:'editar/:id',component:UpdateComponent},
+    {path:'updateUser/:id',component:UpdateComponent},
     {path: 'registerRol', component:RegisterRolComponent},
     {path:'editRol/:id',component:UpdateRolComponent},
     {path:'registerParking',component:RegisterParkingComponent},
     {path:'editParking/:id',component:UpdateParkingComponent},
     {path:'registerSlots',component:RegisterSlotsComponent},
     {path:'seats',component:SeatsComponent},
-    {path:'editar/:id',component:UpdateComponent}]),
+    {path:'registerVehicle',component:RegisterVehicleComponent},
+    {path:'updateVehicle/:id',component:UpdateVehicleComponent},
+    {path:'listClient',component:ListClientComponent},
+    {path:'registerClient',component:RegisterClientComponent},
+    {path:'updateClient/:id',component:UpdateClientComponent}]),
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule
     
   ],
   providers: [],
