@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class RolService {
-  url='http://localhost:8080/api';
+  url='https://cloud-parking-api-springboot.herokuapp.com/api';
 
   constructor(private http: HttpClient) { }
 

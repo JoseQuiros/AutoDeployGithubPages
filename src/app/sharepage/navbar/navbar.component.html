@@ -1,83 +1,89 @@
+<div *ngIf="this.authorityNavBar() === 2; else administrador">
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">CLOUD PARKING</a>
+    <button
+      class="navbar-toggler"
+      (click)="collapse = !collapse"
+      type="button"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<div *ngIf="this.authorityNavBar()===2 else administrador" >
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">CLOUD PARKING</a>
-  <button class="navbar-toggler" (click)="collapse=!collapse" type="button" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <div class="navbar-collapse" (click)="collapse = true" [hidden]="collapse">
+      <ul class="navbar-nav mr-auto">
+        <!--Operador y administrador-->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/vehicle">Vehiculo</a>
+        </li>
 
-  <div class="navbar-collapse" (click)="collapse=true" [hidden]="collapse">
-    <ul class="navbar-nav mr-auto">
-         <!--Operador y administrador-->
-         <li class="nav-item">
-          <a class="nav-link" routerLink="/vehicle">Vehiculo</a> 
-      </li>
-     
-     <li class="nav-item">
-      <a class="nav-link" routerLink="/listClient">Clientes</a> 
-      </li>
-    
-      <li class="nav-item">
-          <a class="nav-link" routerLink="/parking">Parqueo</a> 
-      </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/slot">Espacio</a> 
-      </li>
+          <a class="nav-link" routerLink="/listClient">Clientes</a>
+        </li>
+
         <li class="nav-item">
-          <a class="nav-link" routerLink="/reservation">Reservacion</a> 
-      </li>
-    
-       <li class="nav-item">
-        <a   class="nav-link" (click)="Logout();">Salir</a>
-      </li>     
-    </ul>
-  </div>
-</nav>
+          <a class="nav-link" routerLink="/reservation">Reservacion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/bill">Facturas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="Logout()">Salir</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 </div>
 <ng-template #administrador>
   <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
     <a class="navbar-brand" href="#">CLOUD PARKING</a>
-    <button class="navbar-toggler" (click)="collapse=!collapse" type="button" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      (click)="collapse = !collapse"
+      type="button"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
-  
-    <div class="navbar-collapse" (click)="collapse=true" [hidden]="collapse">
+
+    <div class="navbar-collapse" (click)="collapse = true" [hidden]="collapse">
       <ul class="navbar-nav mr-auto">
-           <!--Operador y administrador-->
-           <li class="nav-item">
-            <a class="nav-link" routerLink="/vehicle">Vehiculo</a> 
-        </li>
-          <li class="nav-item"> 
-            <a class="nav-link" routerLink="/list">Usuario</a> 
-        </li>
-       <li class="nav-item">
-        <a class="nav-link" routerLink="/listClient">Clientes</a> 
-        </li>
-      
+        <!--Operador y administrador-->
         <li class="nav-item">
-            <a class="nav-link" routerLink="/parking">Parqueo</a> 
-        </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/slot">Espacio</a> 
-        </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="/reservation">Reservacion</a> 
-        </li>
-         <li class="nav-item">
-            <a class="nav-link" routerLink="/rol">Roles</a> 
+          <a class="nav-link" routerLink="/vehicle">Vehiculo</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" routerLink="/tarifa">Tarifa</a> 
+          <a class="nav-link" routerLink="/list">Usuario</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/bill">Facturas</a> 
-      </li>
-      
-         <li class="nav-item">
-          <a   class="nav-link" (click)="Logout();">Salir</a>
-        </li>     
+          <a class="nav-link" routerLink="/listClient">Clientes</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/parking">Parqueo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/slot">Espacio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/reservation">Reservacion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/rol">Roles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/tarifa">Tarifa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/bill">Facturas</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" (click)="Logout()">Salir</a>
+        </li>
       </ul>
     </div>
   </nav>
- 
 </ng-template>

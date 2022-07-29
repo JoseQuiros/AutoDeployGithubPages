@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class VehicleService {
 
-  url='http://localhost:8080/api';
+  url='https://cloud-parking-api-springboot.herokuapp.com/api';
 
   constructor(private http: HttpClient) { }
 
