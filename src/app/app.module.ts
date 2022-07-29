@@ -12,7 +12,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { MenupageComponent } from './pages/menupage/menupage.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { TarifaComponent } from './pages/tarifa/tarifa.component';
 import { VehicleComponent } from './pages/vehicle/vehicle.component';
@@ -31,9 +31,6 @@ import { RegisterParkingComponent } from './pages/parking/register-parking/regis
 import { UpdateParkingComponent } from './pages/parking/update-parking/update-parking.component';
 import { RegisterSlotsComponent } from './pages/slot/register-slots/register-slots.component';
 import { SeatsComponent } from './pages/client/seats/seats.component';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { RegisterVehicleComponent } from './pages/vehicle/register-vehicle/register-vehicle.component';
 import { UpdateVehicleComponent } from './pages/vehicle/update-vehicle/update-vehicle.component';
 import { ListClientComponent } from './pages/client/list-client/list-client.component';
@@ -41,11 +38,14 @@ import { RegisterClientComponent } from './pages/client/register-client/register
 import { UpdateClientComponent } from './pages/client/update-client/update-client.component';
 
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatSidenavModule } from '@angular/material/sidenav'
-import { MatListModule } from '@angular/material/list';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
+import { RegisterTarifaComponent } from './pages/tarifa/register-tarifa/register-tarifa.component';
+import { UpdateTarifaComponent } from './pages/tarifa/update-tarifa/update-tarifa.component';
+import { UpdateSlotComponent } from './pages/slot/update-slot/update-slot.component';
+import { BillComponent } from './pages/bill/bill.component';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarClientComponent } from './sharepage/navbar-client/navbar-client.component';
+
 
 @NgModule({
   declarations: [
@@ -73,24 +73,30 @@ import { MatIconModule } from '@angular/material/icon';
     UpdateParkingComponent,
     RegisterSlotsComponent,
     SeatsComponent,
-
-
     RegisterVehicleComponent,
     UpdateVehicleComponent,
     ListClientComponent,
     RegisterClientComponent,
     UpdateClientComponent,
-  
+
+    NavbarClientComponent,
+    
+
+    RegisterTarifaComponent,
+    UpdateTarifaComponent,
+    UpdateSlotComponent,
+    BillComponent,
+    NavbarClientComponent,
 
     
   ],
   imports: [
     BrowserModule,
-    
     RouterModule.forRoot([ {path:'about',component:AboutComponent},
     {path:'tarifa',component:TarifaComponent},
     {path:'vehicle',component:VehicleComponent},
 
+    {path:'home',component:HomeComponent},
     {path:'parking',component:ParkingComponent},
     {path:'slot',component:SlotComponent},
     {path:'rol',component:RolComponent},
@@ -108,16 +114,17 @@ import { MatIconModule } from '@angular/material/icon';
     {path:'updateVehicle/:id',component:UpdateVehicleComponent},
     {path:'listClient',component:ListClientComponent},
     {path:'registerClient',component:RegisterClientComponent},
-    {path:'updateClient/:id',component:UpdateClientComponent}]),
+    {path:'updateClient/:id',component:UpdateClientComponent},
+    {path:'registerFee',component:RegisterTarifaComponent},
+    {path:'updateFee/:id',component:UpdateTarifaComponent},
+    {path:'updateSlots/:id',component:UpdateSlotComponent},
+    {path:'bill',component:BillComponent}
+  ]),
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatButtonModule,
-    MatIconModule
     
   ],
   providers: [],
